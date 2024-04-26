@@ -38,8 +38,8 @@ function App() {
       <div className='App' id={load ? "no-scroll" : "scroll"}>
         <Navbar />
         <Player
-          className={`position-fixed fixed-bottom z-1000 ${
-            playerHide ? "opacity-0" : "opacity-1"
+          className={`position-fixed fixed-bottom ${
+            playerHide ? "z-0 d-none" : "opacity-1 z-1000"
           }`}
           updatePlayerHide={updatePlayerHide}
           playerHide={playerHide}

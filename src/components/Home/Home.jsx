@@ -9,36 +9,34 @@ import Timeline from "./Timeline";
 function Home() {
   return (
     <section>
-      <Container fluid className='home-section' id='home'>
-        <Particle />
-        <Container className='home-content'>
-          <Row>
-            <Col md={7} className='home-header'>
-              <h1 style={{ paddingBottom: 15 }} className='heading'>
-                <span className='wave' role='img' aria-labelledby='wave'>
-                  🎵 🎶
-                </span>
-              </h1>
+      <Particle />
+      <Container className='home-content'>
+        <Row>
+          <Col md={7} className='home-header'>
+            <h1 style={{ paddingBottom: 15 }} className='heading'>
+              <span className='wave' role='img' aria-labelledby='wave'>
+                🎵 🎶
+              </span>
+            </h1>
 
-              <h1 className='heading-name'>
-                I'm <strong className='main-name'> R3SUB</strong>, and music is
-                my heartbeat. I live to craft unforgettable musical
-                experiences—from high-energy beats to soulful melodies.
-                <br />
-                <span className='text-secondary'>-since 2016</span>
-              </h1>
-            </Col>
+            <h1 className='heading-name'>
+              I'm <strong className='main-name'> R3SUB</strong>, and music is my
+              heartbeat. I live to craft unforgettable musical experiences—from
+              high-energy beats to soulful melodies.
+              <br />
+              <span className='text-secondary'>-since 2016</span>
+            </h1>
+          </Col>
 
-            <Col md={5} style={{ paddingBottom: 20 }}>
-              <img
-                src={djPlayer}
-                alt='DJ Player'
-                className='img-fluid'
-                style={{ maxHeight: "450px" }}
-              />
-            </Col>
-          </Row>
-        </Container>
+          <Col md={5} style={{ paddingBottom: 20 }}>
+            <img
+              src={djPlayer}
+              alt='DJ Player'
+              className='img-fluid'
+              style={{ maxHeight: "450px" }}
+            />
+          </Col>
+        </Row>
       </Container>
       {/* <Home2 /> */}
       <h2 className='text-white'>
