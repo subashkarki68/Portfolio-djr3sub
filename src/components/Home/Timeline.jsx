@@ -49,6 +49,7 @@ const Timeline = () => {
             </h4>
           </a>
           <img
+            style={{ maxwidth: "100vh" }}
             src={woodland}
             height={"300px"}
             className='my-2'
@@ -81,6 +82,7 @@ const Timeline = () => {
             </h4>
           </a>
           <img
+            style={{ maxwidth: "100vh" }}
             src={wave}
             className='my-2'
             height={"300px"}
@@ -111,6 +113,7 @@ const Timeline = () => {
             </h4>
           </a>
           <img
+            style={{ maxwidth: "100vh" }}
             src={partybusnepal}
             alt='DJ R3SUB on Party bus nepal'
             height={"300px"}
