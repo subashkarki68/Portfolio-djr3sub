@@ -26,7 +26,7 @@ const Player = ({ className, playerHide, updatePlayerHide }) => {
         ></iframe>
       ) : (
         <iframe
-          width='100%'
+          width='90%'
           style={{ margin: "auto" }}
           height='120'
           src='https://player-widget.mixcloud.com/widget/iframe/?hide_cover=0&autoplay=1&feed=%2Fsubash-karki%2Forganic-house-mix-by-r3sub%2F'
