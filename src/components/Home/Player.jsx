@@ -1,11 +1,13 @@
 import React from "react";
+import { isMobile } from "react-device-detect";
 import { RxCrossCircled } from "react-icons/rx";
 
 const Player = ({ className, playerHide, updatePlayerHide }) => {
+  const width = isMobile ? "100%" : "50%";
   return (
     <div
       className={`${className} d-flex flex-column`}
-      style={{ width: "50%", margin: "auto" }}
+      style={{ width: width, margin: "auto" }}
     >
       {!playerHide && (
         <RxCrossCircled
@@ -14,14 +16,24 @@ const Player = ({ className, playerHide, updatePlayerHide }) => {
           onClick={() => updatePlayerHide(true)}
         />
       )}
-      <iframe
-        width='100%'
-        style={{ margin: "auto" }}
-        height='120'
-        src='https://player-widget.mixcloud.com/widget/iframe/?hide_cover=0&autoplay=1&feed=%2Fsubash-karki%2Forganic-house-mix-by-r3sub%2F'
-        frameborder='0'
-        allow='autoplay'
-      ></iframe>
+      {isMobile ? (
+        <iframe
+          width='50%'
+          height='60'
+          src='https://player-widget.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&autoplay=1&feed=%2Fsubash-karki%2Forganic-house-mix-by-r3sub%2F'
+          frameborder='0'
+          allow='autoplay'
+        ></iframe>
+      ) : (
+        <iframe
+          width='100%'
+          style={{ margin: "auto" }}
+          height='100'
+          src='https://player-widget.mixcloud.com/widget/iframe/?hide_cover=0&autoplay=1&feed=%2Fsubash-karki%2Forganic-house-mix-by-r3sub%2F'
+          frameborder='0'
+          allow='autoplay'
+        ></iframe>
+      )}
     </div>
   );
 };

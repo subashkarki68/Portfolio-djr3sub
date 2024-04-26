@@ -32,6 +32,9 @@ importers:
       react-bootstrap:
         specifier: ^2.2.1
         version: 2.10.2(@types/react@18.2.79)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
+      react-device-detect:
+        specifier: ^2.2.3
+        version: 2.2.3(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
       react-dom:
         specifier: ^17.0.2
         version: 17.0.2(react@17.0.2)
@@ -1506,6 +1509,12 @@ packages:
       '@types/react':
         optional: true
 
+  react-device-detect@2.2.3:
+    resolution: {integrity: sha512-buYY3qrCnQVlIFHrC5UcUoAj7iANs/+srdkwsnNjI7anr3Tt7UY6MqNxtMLlr0tMBied0O49UZVK8XKs3ZIiPw==}
+    peerDependencies:
+      react: '>= 0.14.0'
+      react-dom: '>= 0.14.0'
+
   react-dom@17.0.2:
     resolution: {integrity: sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA==}
     peerDependencies:
@@ -1806,6 +1815,9 @@ packages:
     peerDependencies:
       react: ^17.x || ^18.x
       react-dom: ^17.x || ^18.x
+
+  ua-parser-js@1.0.37:
+    resolution: {integrity: sha512-bhTyI94tZofjo+Dn8SN6Zv8nBDvyXTymAdM3LDI/0IboIUwTu1rEhW7v2TfiVsoYWgkQ4kOVqnI8APUFbIQIFQ==}
 
   uncontrollable@7.2.1:
     resolution: {integrity: sha512-svtcfoTADIB0nT9nltgjujTi7BzVmwjZClOmskKu/E8FW9BXzg9os8OLr4f8Dlnk0rYWJIWr4wv9eKUXiQvQwQ==}
@@ -3460,6 +3472,12 @@ snapshots:
     optionalDependencies:
       '@types/react': 18.2.79
 
+  react-device-detect@2.2.3(react-dom@17.0.2(react@17.0.2))(react@17.0.2):
+    dependencies:
+      react: 17.0.2
+      react-dom: 17.0.2(react@17.0.2)
+      ua-parser-js: 1.0.37
+
   react-dom@17.0.2(react@17.0.2):
     dependencies:
       loose-envify: 1.4.0
@@ -3802,6 +3820,8 @@ snapshots:
       raf: 3.4.1
       react: 17.0.2
       react-dom: 17.0.2(react@17.0.2)
+
+  ua-parser-js@1.0.37: {}
 
   uncontrollable@7.2.1(react@17.0.2):
     dependencies:
