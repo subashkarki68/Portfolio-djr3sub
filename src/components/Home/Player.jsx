@@ -7,7 +7,7 @@ const Player = ({ className, playerHide, updatePlayerHide }) => {
   return (
     <div
       className={`${className} d-flex flex-column`}
-      style={{ width: width, margin: "auto", zIndex: "999999" }}
+      style={{ width: width, margin: "auto", zIndex: "99999" }}
     >
       {!playerHide && (
         <RxCrossCircled
