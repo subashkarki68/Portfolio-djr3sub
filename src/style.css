@@ -756,3 +756,9 @@ button:focus {
     transform: rotate(360deg);
   }
 }
+
+.close-icon:hover {
+  color: white !important;
+  stroke: white;
+  cursor: pointer;
+}

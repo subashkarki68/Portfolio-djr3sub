@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useEffect, useState } from "react";
+import { FaMusic } from "react-icons/fa";
 import {
   Navigate,
   Route,
@@ -20,6 +21,7 @@ import "./style.css";
 
 function App() {
   const [load, upadateLoad] = useState(true);
+  const [playerHide, updatePlayerHide] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -35,7 +37,23 @@ function App() {
 
       <div className='App' id={load ? "no-scroll" : "scroll"}>
         <Navbar />
-        <Player className='position-fixed fixed-bottom' />
+        <Player
+          className={`position-fixed fixed-bottom z-1000 ${
+            playerHide ? "opacity-0" : "opacity-1"
+          }`}
+          updatePlayerHide={updatePlayerHide}
+          playerHide={playerHide}
+        />
+        {playerHide && (
+          <FaMusic
+            className='text-danger close-icon position-fixed bottom-0 end-0 m-3 z-99'
+            style={{
+              height: "30px",
+              width: "30px",
+            }}
+            onClick={() => updatePlayerHide(false)}
+          />
+        )}
         <ScrollToTop />
         <Routes>
           <Route path='/' element={<Home />} />
