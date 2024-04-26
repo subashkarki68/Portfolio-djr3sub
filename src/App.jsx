@@ -46,10 +46,11 @@ function App() {
         />
         {playerHide && (
           <FaMusic
-            className='text-danger close-icon position-fixed bottom-0 end-0 m-3 z-99'
+            className='text-danger close-icon position-fixed bottom-0 end-0 m-3'
             style={{
               height: "30px",
               width: "30px",
+              zIndex: "999999",
             }}
             onClick={() => updatePlayerHide(false)}
           />

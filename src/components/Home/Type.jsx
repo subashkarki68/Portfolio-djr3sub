@@ -8,6 +8,8 @@ function Type() {
         strings: [
           "Afrobeats",
           "Amapiano",
+          "Afro House",
+          "Beach House",
           "Tropical House",
           "Chill",
           "Jazz",
