@@ -5,7 +5,7 @@ export default defineConfig(() => {
   return {
     build: {
       assetsInclude: ["**/*.jpg"],
-      outDir: "build",
+      outDir: "dist",
     },
     plugins: [react()],
   };
