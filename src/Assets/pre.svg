@@ -7,7 +7,7 @@
                 <animate attributeName="cy"
                      begin="0s" dur="2.2s"
                      values="50;5;50;50"
-                     calcMode="linear"
+                     calcMode="linear" 
                      repeatCount="indefinite" />
                 <animate attributeName="cx"
                      begin="0s" dur="2.2s"
