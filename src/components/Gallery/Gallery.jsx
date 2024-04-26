@@ -1,51 +1,59 @@
 import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
-import ImageGallery from "react-image-gallery";
-import "react-image-gallery/styles/css/image-gallery.css";
-
+import GalleryData from "../../Assets/Gallery/gallery";
 import Particle from "../Particle";
+import "./gallery.css";
 
 const Gallery = ({ updatePlayerHide }) => {
-  const [showVideo, setShowVideo] = useState(true);
-  const toggleShowVideo = () => {
-    setShowVideo(!showVideo);
-  };
+  const [galleryData, setGalleryData] = useState([]);
+  const [file, setFile] = useState(null);
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await Promise.all(
+        GalleryData.map(async (item) => {
+          return { ...item, url: await item.url };
+        })
+      );
+      setGalleryData(data);
+    };
+
+    fetchData();
+  }, []);
+
   useEffect(() => {
     if (updatePlayerHide) updatePlayerHide(true);
   }, []);
-  const _renderVideo = (item) => {
-    return (
-      <div className='video-container'>
-        <iframe
-          src={item.embedUrl}
-          width='560'
-          height='315'
-          allow='accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-          allowFullScreen
-        />
-      </div>
-    );
-  };
-
-  const images = [
-    {
-      embedUrl:
-        "https://www.youtube.com/embed/mrmnG2DsJi4?autoplay=0&showinfo=0",
-      description: "Render custom slides (such as videos)",
-      renderItem: _renderVideo,
-    },
-    {
-      embedUrl:
-        "https://www.youtube.com/embed/4pSzhZ76GdM?autoplay=0&showinfo=0",
-      description: "Render custom slides (such as videos)",
-      renderItem: _renderVideo,
-    },
-  ];
-
   return (
     <Container fluid className='about-section' style={{ minHeight: "100vh" }}>
       <Particle />
-      <ImageGallery items={images} />
+      {galleryData && (
+        <div className='gallery-container'>
+          {galleryData.map((file, index) => {
+            return (
+              <div className='media' key={index} onClick={() => setFile(file)}>
+                {file.type === "image" ? (
+                  <img src={file.url.default} alt='Image of DJ R3SUB' />
+                ) : (
+                  <video src={file.url.default}></video>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      )}
+      {file && (
+        <div
+          className='popup-media'
+          style={{ display: file ? "block" : "none" }}
+        >
+          <span onClick={() => setFile(null)}>&times;</span>
+          {file?.type === "video" ? (
+            <video src={file.url.default} autoPlay controls />
+          ) : (
+            <img src={file.url.default} />
+          )}
+        </div>
+      )}
     </Container>
   );
 };
