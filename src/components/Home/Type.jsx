@@ -6,10 +6,23 @@ function Type() {
     <Typewriter
       options={{
         strings: [
-          "Software Developer",
-          "Freelancer",
-          "MERN Stack Developer",
-          "Open Source Contributor",
+          "Afrobeats",
+          "Amapiano",
+          "Tropical House",
+          "Chill",
+          "Jazz",
+          "Soul",
+          "Deep House",
+          "Reggae",
+          "Bossa Nova",
+          "Latin Jazz",
+          "Acoustic",
+          "Indie Pop",
+          "Funk",
+          "Highlife",
+          "Kizomba",
+          "Soca",
+          // Add more favorite genres here as needed
         ],
         autoStart: true,
         loop: true,

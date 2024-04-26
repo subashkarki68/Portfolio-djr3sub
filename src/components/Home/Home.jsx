@@ -1,16 +1,19 @@
 import React from "react";
 import { Col, Container, Nav, Row } from "react-bootstrap";
-import { FaHome } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import djPlayer from "../../Assets/djplayer.gif";
 import Particle from "../Particle";
 import Timeline from "./Timeline";
+import Type from "./Type";
 
 function Home() {
   return (
     <section>
       <Particle />
       <Container className='home-content'>
+        <h3>Current Favourite Genres:</h3>
+        <Type />
+        <br />
         <Row>
           <Col md={7} className='home-header'>
             <h1 style={{ paddingBottom: 15 }} className='heading'>
@@ -18,7 +21,6 @@ function Home() {
                 🎵 🎶
               </span>
             </h1>
-
             <h1 className='heading-name'>
               I'm <strong className='main-name'> R3SUB</strong>, and music is my
               heartbeat. I live to craft unforgettable musical experiences—from
@@ -39,20 +41,19 @@ function Home() {
         </Row>
       </Container>
       {/* <Home2 /> */}
-      <h2 className='text-white'>
-        The timeline below highlights my DJ career journey from 2016, starting
-        with training and progressing to gigs in clubs and bars. However, it
-        doesn't encompass my entire experience, as I've also performed at
-        numerous private events and festivals. Explore the Gallery for more
-        insights into my diverse portfolio.
-        <Nav className='ms-auto' defaultActiveKey='#home'>
-          <Nav.Item>
-            <Nav.Link as={Link} to='/about'>
-              <FaHome style={{ marginBottom: "2px" }} /> Home
+      <Container>
+        <h3 className='text-white'>
+          My DJ career began in 2016 with training, leading to gigs in clubs and
+          bars. This timeline doesn't cover all my experiences—I've also
+          performed at private events and festivals. For more on my diverse
+          portfolio, click below :
+          <span className='ms-2 me-2'>
+            <Nav.Link as={Link} to='/about' className='text-primary'>
+              Gallery
             </Nav.Link>
-          </Nav.Item>
-        </Nav>
-      </h2>
+          </span>
+        </h3>
+      </Container>
       <Timeline />
     </section>
   );

@@ -1,10 +1,11 @@
 import React from "react";
-import { FaHome, FaSchool, FaStar } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
+import buddhabar from "../../Assets/work-images/buddhabar.jpg";
 import partybusnepal from "../../Assets/work-images/partybusnepal.jpg";
 import wave from "../../Assets/work-images/wave.jpg";
 import woodland from "../../Assets/work-images/woodland.jpg";
@@ -114,7 +115,6 @@ const Timeline = () => {
             style={{ width: "100%" }}
             src={partybusnepal}
             alt='DJ R3SUB on Party bus nepal'
-            height={"300px"}
             className='my-2'
           />
           <p>
@@ -133,47 +133,41 @@ const Timeline = () => {
           </p>
         </VerticalTimelineElement>
         <VerticalTimelineElement
-          className='vertical-timeline-element--education'
-          date='April 2013'
-          iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
-          icon={<FaSchool />}
+          className='vertical-timeline-element--work'
+          date='2021 - present'
+          iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+          icon={<FaHome />}
+          contentStyle={{ background: "transparent", color: "#fff" }}
+          contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
         >
-          <h3 className='vertical-timeline-element-title'>
-            Content Marketing for Web, Mobile and Social Media
-          </h3>
-          <h4 className='vertical-timeline-element-subtitle'>Online Course</h4>
-          <p>Strategy, Social Media</p>
+          <h3 className='vertical-timeline-element-title'>Resident DJ</h3>
+
+          <a
+            href='https://www.instagram.com/buddhabar_kathmandu'
+            target='_blank'
+          >
+            <h4 className='vertical-timeline-element-subtitle'>
+              Buddha Bar Thamel
+            </h4>
+          </a>
+          <img
+            style={{ width: "100%" }}
+            src={buddhabar}
+            alt='DJ R3SUB on Buddha Bar Thamel'
+            className='my-2'
+          />
+          <p>
+            As a Resident DJ at Buddha Bar Thamel, I curate an ambient
+            atmosphere with chill, afrobeats, amapiano, R&B, jazz, soul, disco,
+            funk, reggae, electronic, and house music. The bar's sophisticated
+            setting and vibrant music selection offer patrons a unique
+            experience in the heart of Kathmandu. From laid-back evenings to
+            energetic weekend nights, my curated playlists complement the bar's
+            exotic cocktails and create an unforgettable journey through music.
+            I perform 5-hour DJ sets on weekdays, blending these diverse genres
+            to create a captivating atmosphere for guests to enjoy.
+          </p>
         </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className='vertical-timeline-element--education'
-          date='November 2012'
-          iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
-          icon={<FaSchool />}
-        >
-          <h3 className='vertical-timeline-element-title'>
-            Agile Development Scrum Master
-          </h3>
-          <h4 className='vertical-timeline-element-subtitle'>Certification</h4>
-          <p>Creative Direction, User Experience, Visual Design</p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className='vertical-timeline-element--education'
-          date='2002 - 2006'
-          iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
-          icon={<FaSchool />}
-        >
-          <h3 className='vertical-timeline-element-title'>
-            Bachelor of Science in Interactive Digital Media Visual Imaging
-          </h3>
-          <h4 className='vertical-timeline-element-subtitle'>
-            Bachelor Degree
-          </h4>
-          <p>Creative Direction, Visual Design</p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          iconStyle={{ background: "rgb(16, 204, 82)", color: "#fff" }}
-          icon={<FaStar />}
-        />
       </VerticalTimeline>
     </>
   );
