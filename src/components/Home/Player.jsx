@@ -3,7 +3,7 @@ import { isMobile } from "react-device-detect";
 import { RxCrossCircled } from "react-icons/rx";
 
 const Player = ({ className, playerHide, updatePlayerHide }) => {
-  const width = isMobile ? "100%" : "50%";
+  const width = isMobile ? "95%" : "50%";
   return (
     <div
       className={`${className} d-flex flex-column`}
@@ -26,7 +26,7 @@ const Player = ({ className, playerHide, updatePlayerHide }) => {
         ></iframe>
       ) : (
         <iframe
-          width='90%'
+          width='100%'
           style={{ margin: "auto" }}
           height='120'
           src='https://player-widget.mixcloud.com/widget/iframe/?hide_cover=0&autoplay=1&feed=%2Fsubash-karki%2Forganic-house-mix-by-r3sub%2F'
