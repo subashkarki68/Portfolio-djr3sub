@@ -8,8 +8,8 @@ import {
   Routes,
 } from "react-router-dom";
 import "./App.css";
-import About from "./components/About/About.jsx";
 import Footer from "./components/Footer.jsx";
+import Gallery from "./components/Gallery/Gallery.jsx";
 import Home from "./components/Home/Home.jsx";
 import Player from "./components/Home/Player.jsx";
 import Navbar from "./components/Navbar.jsx";
@@ -61,7 +61,10 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/project' element={<Projects />} />
-          <Route path='/about' element={<About />} />
+          <Route
+            path='/gallery'
+            element={<Gallery updatePlayerHide={updatePlayerHide} />}
+          />
           <Route path='/resume' element={<Resume />} />
           <Route path='*' element={<Navigate to='/' />} />
         </Routes>
