@@ -7,14 +7,21 @@ import "./gallery.css";
 const Gallery = ({ updatePlayerHide }) => {
   const [galleryData, setGalleryData] = useState([]);
   const [file, setFile] = useState(null);
+  console.log("GalleryData", GalleryData);
   useEffect(() => {
     const fetchData = async () => {
       const data = await Promise.all(
         GalleryData.map(async (item) => {
-          return { ...item, url: await item.url };
+          console.log("item", item);
+          return {
+            ...item,
+            url: await item.url,
+            thumbnail: await item.thumbnail,
+          };
         })
       );
       setGalleryData(data);
+      console.log("data", data);
     };
 
     fetchData();
@@ -34,7 +41,10 @@ const Gallery = ({ updatePlayerHide }) => {
                 {file.type === "image" ? (
                   <img src={file.url.default} alt='Image of DJ R3SUB' />
                 ) : (
-                  <video src={file.url.default}></video>
+                  <video
+                    src={file.url.default}
+                    poster={file.thumbnail.default}
+                  />
                 )}
               </div>
             );

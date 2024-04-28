@@ -48,7 +48,7 @@ function Home() {
           performed at private events and festivals. For more on my diverse
           portfolio, click below :
           <span className='ms-2 me-2'>
-            <Nav.Link as={Link} to='/about' className='text-primary'>
+            <Nav.Link as={Link} to='/gallery' className='text-primary'>
               Gallery
             </Nav.Link>
           </span>
