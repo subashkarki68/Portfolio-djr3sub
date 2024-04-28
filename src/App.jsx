@@ -14,8 +14,6 @@ import Home from "./components/Home/Home.jsx";
 import Player from "./components/Home/Player.jsx";
 import Navbar from "./components/Navbar.jsx";
 import Preloader from "./components/Pre.jsx";
-import Projects from "./components/Projects/Projects.jsx";
-import Resume from "./components/Resume/ResumeNew.jsx";
 import ScrollToTop from "./components/ScrollToTop.js";
 import "./style.css";
 
@@ -60,12 +58,10 @@ function App() {
         <ScrollToTop />
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/project' element={<Projects />} />
           <Route
             path='/gallery'
             element={<Gallery updatePlayerHide={updatePlayerHide} />}
           />
-          <Route path='/resume' element={<Resume />} />
           <Route path='*' element={<Navigate to='/' />} />
         </Routes>
         <Footer />
