@@ -7,12 +7,10 @@ import "./gallery.css";
 const Gallery = ({ updatePlayerHide }) => {
   const [galleryData, setGalleryData] = useState([]);
   const [file, setFile] = useState(null);
-  console.log("GalleryData", GalleryData);
   useEffect(() => {
     const fetchData = async () => {
       const data = await Promise.all(
         GalleryData.map(async (item) => {
-          console.log("item", item);
           return {
             ...item,
             url: await item.url,
@@ -21,7 +19,6 @@ const Gallery = ({ updatePlayerHide }) => {
         })
       );
       setGalleryData(data);
-      console.log("data", data);
     };
 
     fetchData();
@@ -31,7 +28,12 @@ const Gallery = ({ updatePlayerHide }) => {
     if (updatePlayerHide) updatePlayerHide(true);
   }, []);
   return (
-    <Container fluid className='about-section' style={{ minHeight: "100vh" }}>
+    <Container
+      fluid
+      className='about-section'
+      style={{ minHeight: "100vh" }}
+      onClick={() => (file != null ? setFile(null) : "")}
+    >
       <Particle />
       {galleryData && (
         <div className='gallery-container'>
